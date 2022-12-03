@@ -25,7 +25,8 @@
     
     콘텐츠 기반 필터링은 사용자가 선호했던 아이템과 메타데이터가 유사한 아이템을 추천하거나, 사용자가 사전에 입력한 프로파일 정보를 토대로 그에 해당하는 아이템을 추천해주는 방식이다.
     
-    ![image](https://user-images.githubusercontent.com/72954921/205452416-3bb49305-8300-4149-bf5b-ab615a3bac56.png)
+    <img src = "https://user-images.githubusercontent.com/72954921/205452416-3bb49305-8300-4149-bf5b-ab615a3bac56.png" width="50%">
+    
     
     협업 필터링과 콘텐츠 기반 필터링(Abhijeet Anand, 2020.09.30)
     
@@ -59,7 +60,8 @@
 
  이후의 데이터 전처리 과정은 다음과 같다. 우선 아티스트를 표현하는 Genre 하나 하나를 단어로 취급하고, 해당 아티스트의 Genre 리스트를 한 문장으로 간주한다. 그 후에 문장들의 리스트를 Word2Vec 모델의 입력 파라미터로 만든다.
 
-![image](https://user-images.githubusercontent.com/72954921/205452384-75d733f2-250e-4f1b-b222-dbb283c7a2bc.png)
+<img src = "https://user-images.githubusercontent.com/72954921/205452384-75d733f2-250e-4f1b-b222-dbb283c7a2bc.png" width="30%">
+
 
 이렇게 만든 121,171개의 문장에 추가적으로 연관 아티스트 데이터를 활용해서 연관 아티스트들의 장르 벡터를 추가하여 데이터 증강을 진행했다.
 
@@ -88,23 +90,24 @@
 
 ### 아키텍처
 
-![image](https://user-images.githubusercontent.com/72954921/205452061-e8e61709-f337-447d-adf6-ef26a69e51fc.png)
+<img src = "https://user-images.githubusercontent.com/72954921/205452061-e8e61709-f337-447d-adf6-ef26a69e51fc.png" width="50%">
 
 ### Installation
 
 ### 실행화면
 
+#### 로그인 시 최초 화면
 ![image](https://user-images.githubusercontent.com/72954921/205452088-c4ff9a15-639d-48ee-8fe9-e3053e8c7db2.png)
 
-로그인 시 최초 화면
 
+#### 플레이리스트 선택 시 화면
 ![image](https://user-images.githubusercontent.com/72954921/205452174-98b70c20-34d3-4ddc-841f-764000209c4e.png)
 
-플레이리스트 선택 시 화면
 
-![image](https://user-images.githubusercontent.com/72954921/205452035-3f7ec045-8ca2-4bdb-a257-676b28d1c89a.png)
+#### 추천 장르 목록
+<img src = "https://user-images.githubusercontent.com/72954921/205452035-3f7ec045-8ca2-4bdb-a257-676b28d1c89a.png" width="30%">
 
-추천 장르 목록
+
 
 
 
