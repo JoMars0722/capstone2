@@ -25,7 +25,9 @@
 ## backend
 /backend/datasets
 /backend/models
+/backend/__pycache__
 
 ## word2vec
 /word2vec/dataset
 /word2vec/model
+/word2vec/.ipynb_checkpoints
