@@ -1,0 +1,6 @@
+.artist__info {
+    display: flex;
+    background-color: #101010;
+    color:gray;
+    flex-direction: column;
+}

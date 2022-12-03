@@ -1,0 +1,28 @@
+.genre__info{
+    padding : 10px;
+    flex-direction: column;
+    color:gray;
+    border-bottom: 2px solid #1b1b1b;
+}
+
+.genre__name{
+    padding : 10px;
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.similar__genre {
+    text-align: left;
+    color: gray;
+    padding: 10px;
+
+}
+
+.artists__container {
+    display: flex;
+    color:gray;
+    flex-direction: row;
+    overflow: scroll;
+}
