@@ -1,6 +1,6 @@
 {
-    "spotify_client_id": "0446e28ab96644b9995387ccf77372d6", 
-    "spotify_client_secret": "75e8090219234862b7b6a356c3f12063",
-    "spotify_redirect_uri" : "http://localhost:3001/callback/", 
+    "spotify_client_id": "your client id", 
+    "spotify_client_secret": "your client secret",
+    "spotify_redirect_uri" : "your redirect uri", 
     "spotify_scope": "user-library-read"
 }
