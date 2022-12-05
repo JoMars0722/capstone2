@@ -12,8 +12,8 @@
 1. 의존성 패키지 설치
     
     ```bash
-    cd backend
-    pip install -r requirments.txt
+    $ cd backend
+    $ pip install -r requirments.txt
     ```
     
 2. backend/app.py 실행
@@ -23,8 +23,8 @@
 1. 의존성 패키지 설치
     
     ```bash
-    cd frontend
-    npm install
+    $ cd frontend
+    $ npm install
     ```
     
 2. Spotify API Key 생성
@@ -45,7 +45,7 @@
 3. 실행
     
     ```bash
-    npm start
+    $ npm start
     ```
 
 # 연구 배경
