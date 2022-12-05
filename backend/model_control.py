@@ -1,15 +1,3 @@
-from gensim.models import Word2Vec
-from gensim.models import KeyedVectors
-from gensim.models import FastText
-import gensim.models as g
-from sklearn.manifold import TSNE
-import json
-from tqdm import tqdm
-import numpy as np
-import matplotlib.pyplot as plt
-import math
-import pandas as pd
-
 def make_positive_list(genre_list, model):
     # 장르 리스트를 입력받으면 word vector 내에 있는 vocabulary만 리턴
     positive_list = []

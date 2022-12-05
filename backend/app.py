@@ -15,7 +15,7 @@ CORS(app)
 
 file_path = "./datasets/origin_data.json"
 genre_artists_path = "./datasets/genre_artists.json"
-model_path = './models/augmented_genres_w10.model'
+model_path = './models/augmented_genres_w5_cbow.model'
 
 with open(file_path, 'r') as file:
     origin_data = json.load(file)

@@ -1,8 +1,3 @@
-import json
-
-def jprint(jsn):
-    print(json.dumps(jsn, indent=3))
-
 def get_playlist_artists(playlist_items_list):
     # 플레이리스트가 갖고있는 곡들의 json 데이터 배열을 입력하면 해당 플리의 아티스트 리스트를 리턴
     appear_artists = []
