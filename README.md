@@ -16,7 +16,11 @@
     $ pip install -r requirments.txt
     ```
     
-2. backend/app.py 실행
+2. 다음 링크에서 models과 datasets 디렉토리를 ./backend에 다운로드
+    
+    [LINK](https://drive.google.com/drive/folders/1O1z4dTMnwHW4x539UGrwLpum2Tp8g6-D?usp=sharing)
+    
+3. backend/app.py 실행
 
 ### Frontend
 
