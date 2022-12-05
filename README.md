@@ -5,6 +5,49 @@
 > Word2Vec을 이용해 장르 간 유사도를 나타내어 새로운 장르를 추천해주는 시스템입니다. Spotify 사용자의 재생목록을 입력으로 받은 뒤에 해당 재생목록의 전체 장르들과 유사한 새로운 장르 및 해당 장르와 관련된 아티스트를 표시합니다.
 > 
 
+# Installation
+
+### Flask Server
+
+1. 의존성 패키지 설치
+    
+    ```bash
+    cd backend
+    pip install -r requirments.txt
+    ```
+    
+2. backend/app.py 실행
+
+### Frontend
+
+1. 의존성 패키지 설치
+    
+    ```bash
+    cd frontend
+    npm install
+    ```
+    
+2. Spotify API Key 생성
+    1. 다음 링크로 로그인 [https://developer.spotify.com/dashboard/](https://developer.spotify.com/dashboard/)
+    2. ‘CREATE AN APP’ 버튼 클릭해서 앱 생성
+    3. client id 획득
+    4. ‘EDIT SETTINGS’ 버튼 클릭 한 뒤에 Redirect URIs에 다음 링크 입력 [http://localhost:3000/callback/](http://localhost:3000/callback/)
+    5. ./src/config.json에 (c)에서 획득한 client id 입력
+        
+        ```json
+        {
+            "development": {
+                "spotify_client_id": "your client id"
+            }
+        }
+        ```
+        
+3. 실행
+    
+    ```bash
+    npm start
+    ```
+
 # 연구 배경
 
 현재 음악 스트리밍 서비스의 추천 시스템은 협업 필터링과 콘텐츠 기반 필터링을 주축으로 개발되어 높은 성능을 보인다. 하지만 사용자의 경향을 시스템이 학습하기 때문에 필터 버블이 형성되는 문제가 생기고, 자주 듣는 장르에 해당하는 추천 결과만 발생하게 된다. 따라서 필터 버블로 인한 편향성을 해소하기 위해 Word2Vec을 이용해서 사용자가 새로운 장르의 결과물도 추천 받을 수 있도록 시스템을 제시한다.
@@ -92,7 +135,6 @@
 
 <img src = "https://user-images.githubusercontent.com/72954921/205452061-e8e61709-f337-447d-adf6-ef26a69e51fc.png" width="50%">
 
-### Installation
 
 ### 실행화면
 
