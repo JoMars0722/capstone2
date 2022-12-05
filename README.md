@@ -9,7 +9,7 @@
 
 현재 음악 스트리밍 서비스의 추천 시스템은 협업 필터링과 콘텐츠 기반 필터링을 주축으로 개발되어 높은 성능을 보인다. 하지만 사용자의 경향을 시스템이 학습하기 때문에 필터 버블이 형성되는 문제가 생기고, 자주 듣는 장르에 해당하는 추천 결과만 발생하게 된다. 따라서 필터 버블로 인한 편향성을 해소하기 위해 Word2Vec을 이용해서 사용자가 새로운 장르의 결과물도 추천 받을 수 있도록 시스템을 제시한다.
 
----
+
 
 # 관련 연구
 
@@ -25,7 +25,8 @@
     
     콘텐츠 기반 필터링은 사용자가 선호했던 아이템과 메타데이터가 유사한 아이템을 추천하거나, 사용자가 사전에 입력한 프로파일 정보를 토대로 그에 해당하는 아이템을 추천해주는 방식이다.
     
-    ![협업 필터링과 콘텐츠 기반 필터링(Abhijeet Anand, 2020.09.30)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b650f9b6-35c6-4b6e-acbc-3cda8ab594d5/Untitled.png)
+    <img src = "https://user-images.githubusercontent.com/72954921/205452416-3bb49305-8300-4149-bf5b-ab615a3bac56.png" width="50%">
+    
     
     협업 필터링과 콘텐츠 기반 필터링(Abhijeet Anand, 2020.09.30)
     
@@ -34,7 +35,7 @@
 
  Word2Vec은 2013년에 구글이 발표한 연구로, 모델 내부의 심층 신경망을 이용해 문장 내 단어를 다차원 벡터로 변환하는 모델이다. Word2Vec는 중심 단어로 주변 단어를 예측하는 Skip-Gram 방식과 주변 단어로 중심 단어를 예측하는 CBOW 방식이 있다. 분산 표현을 통해서 단어의 의미를 여러 개의 차원에 분산시키고 그 분산 벡터를 바탕으로 단어 간 유사도를 계산한다.
 
----
+
 
 # Word2Vec 모델 학습
 
@@ -59,11 +60,12 @@
 
  이후의 데이터 전처리 과정은 다음과 같다. 우선 아티스트를 표현하는 Genre 하나 하나를 단어로 취급하고, 해당 아티스트의 Genre 리스트를 한 문장으로 간주한다. 그 후에 문장들의 리스트를 Word2Vec 모델의 입력 파라미터로 만든다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cc90b707-55b0-40d4-8d1c-eb4126af3f72/Untitled.png)
+<img src = "https://user-images.githubusercontent.com/72954921/205452384-75d733f2-250e-4f1b-b222-dbb283c7a2bc.png" width="30%">
+
 
 이렇게 만든 121,171개의 문장에 추가적으로 연관 아티스트 데이터를 활용해서 연관 아티스트들의 장르 벡터를 추가하여 데이터 증강을 진행했다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3a6cdeff-8c26-4774-979b-a27f1c4b973c/Untitled.png)
+![image](https://user-images.githubusercontent.com/72954921/205452335-33088467-55c1-4f3b-8d15-f249a6981f83.png)
 
 ### 모델 적용
 
@@ -80,33 +82,34 @@
 
 해당 하이퍼 파라미터를 설정하고 5,302개의 장르로 구성된 147,939개의 문장을 모델에 입력한다. min_count에 의해 해당 빈도수보다 낮게 등장한 단어는 vocabulary에서 제외되므로 vocabulary 내의 최종 장르 레이블은 5,302개에서 4,134개로 축소되었다. Word2Vec 모델이 비지도 학습을 통해 장르끼리 군집을 형성하고, 그 군집을 2차원으로 변형해 400개의 장르를 t-SNE로 시각화 한 결과는 다음과 같다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/372afdca-4b0b-4f48-9451-321817d10651/Untitled.png)
+![image](https://user-images.githubusercontent.com/72954921/205452205-58bcc612-9dd5-4fac-9132-3eb90e21f8f9.png)
 
----
+
 
 # 구현
 
 ### 아키텍처
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ff1d375-69e8-4918-a0db-dafa06f5cc7c/Untitled.png)
+<img src = "https://user-images.githubusercontent.com/72954921/205452061-e8e61709-f337-447d-adf6-ef26a69e51fc.png" width="50%">
 
 ### Installation
 
 ### 실행화면
 
-![로그인 시 최초 화면](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e5382cb-f8f0-421f-ac6f-408c666c3586/Untitled.png)
+#### 로그인 시 최초 화면
+![image](https://user-images.githubusercontent.com/72954921/205452088-c4ff9a15-639d-48ee-8fe9-e3053e8c7db2.png)
 
-로그인 시 최초 화면
 
-![플레이리스트 선택 시 화면](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/27007967-ee87-4088-9d1b-bd029265c068/Untitled.png)
+#### 플레이리스트 선택 시 화면
+![image](https://user-images.githubusercontent.com/72954921/205452174-98b70c20-34d3-4ddc-841f-764000209c4e.png)
 
-플레이리스트 선택 시 화면
 
-![추천 장르 목록](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2af2eb9f-31ed-415d-bfaa-66267da875c3/Untitled.png)
+#### 추천 장르 목록
+<img src = "https://user-images.githubusercontent.com/72954921/205452035-3f7ec045-8ca2-4bdb-a257-676b28d1c89a.png" width="30%">
 
-추천 장르 목록
 
----
+
+
 
 # 개선점
 
@@ -115,7 +118,7 @@
 3. Word2Vec 학습 시에 단어의 배열 순서에 따라 결과물이 바뀌는 것을 확인해 인기도 순으로 중앙에 가도록 배치하였는데, 이러한 작업이 실제로 결과물에 얼마나 영향을 끼치는지 측정할 수단이 필요하다.
 4. Word2Vec 학습 시에 하이퍼 파라미터를 자의적인 판단으로 설정하였는데, 그리드 서치를 이용해 최적 값을 찾는다면 추천 성능을 향상시킬 수 있을 것이라 생각한다.
 
----
+
 
 # 참고 문헌
 
